@@ -94,7 +94,3 @@ carouselButtonNext.onclick=function(){
 
 console.log(carouselButtonPrev,carouselButtonNext)
 console.log(carouselTxtMode)
-
-
-
-
