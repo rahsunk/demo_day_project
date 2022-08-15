@@ -128,7 +128,7 @@
     }
   
     #pages a:hover{
-      color:blue;
+      color: #638eba;
     }
     
     .carousel-control-prev-icon,
@@ -320,9 +320,10 @@
         border:none;
         text-align:center;
         margin-top:5vw;  
+        margin-bottom:12vw;
       }
       #carouselTxt h5{
-        font-weight:bold
+        font-weight:bold;
       }
   }
   
@@ -352,9 +353,29 @@
       color: #fff
   }
   
+  #contributors{
+    margin-top:3vw;
+    margin-left:20vw;
+    margin-right:20vw;
+    text-align:center
+  }
+  
+  #contributors h3{
+    margin-top:3vw;
+    font-weight:bolder;
+    color: black;
+    font-size: 30px;
+  }
+  
+  #contributors a{
+    text-decoration:underline;
+    font-size: 20px;
+  }
+  
   html {
       scroll-behavior: smooth;
   }
+  
   
   
   /* #back-to-top-btn{
