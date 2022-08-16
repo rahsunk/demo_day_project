@@ -67,6 +67,7 @@
 #mission p{
   font-size: 35px;
   line-height: 70px;
+  color:white;
 }
 
 #mission h1{
@@ -197,6 +198,7 @@ form label{
 
 .airDesc{
   margin-top:3vw;
+  font-weight:bold
 }
 
 #scale{
@@ -256,6 +258,9 @@ form label{
     font-size: 20px;
     line-height: 30px;
   }
+  #mission h1{
+    font-size:50px;
+  }
   .newTimeDivs{
     margin-top:5vw;
     display:flex;
@@ -268,6 +273,7 @@ form label{
   }
   .timelineSegment{
     margin-bottom:5vw;
+    font-weight:bold;
   }
   #zipSubmit,#airSubmit{
     margin-top:5vw;
