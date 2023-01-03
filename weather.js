@@ -89,69 +89,69 @@ const celciusConvert=(celcius)=>{
 const initTimeline=async(length="Hourly",range="Next 5",lat=40.5923,lon=-74.0071)=>{
   if(length=="Hourly"){
     // Weather data from yesterday, today, and tomrrow is fetched, to account for all possibilities of the next 5 and last 5 hours.
-    // let timelineAPI=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yesterday.substr(11,4)}-${monthConvert(yesterday.substr(4,3))}-${yesterday.substr(8,2)}/${tomorrow.substr(11,4)}-${monthConvert(tomorrow.substr(4,3))}-${tomorrow.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-    // let timelineResponse=await fetch(timelineAPI)
-    // let timelineData=await timelineResponse.json()
-    let timelineData=hourlySample
+    let timelineAPI=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yesterday.substr(11,4)}-${monthConvert(yesterday.substr(4,3))}-${yesterday.substr(8,2)}/${tomorrow.substr(11,4)}-${monthConvert(tomorrow.substr(4,3))}-${tomorrow.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+    let timelineResponse=await fetch(timelineAPI)
+    let timelineData=await timelineResponse.json()
+    // let timelineData=hourlySample
     getTimeline(timelineData,length,range)
   }
   else if(length=="Daily"){
     // Weather data from 4 days ago up to 4 days in the future is fetched, to account for all possibilities of the next 5 and last 5 days.
-    // let timelineAPI=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${dayLowerLimit.substr(11,4)}-${monthConvert(dayLowerLimit.substr(4,3))}-${dayLowerLimit.substr(8,2)}/${dayUpperLimit.substr(11,4)}-${monthConvert(dayUpperLimit.substr(4,3))}-${dayUpperLimit.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-    // let timelineResponse=await fetch(timelineAPI)
-    // let timelineData=await timelineResponse.json()
-    let timelineData=dailySample
+    let timelineAPI=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${dayLowerLimit.substr(11,4)}-${monthConvert(dayLowerLimit.substr(4,3))}-${dayLowerLimit.substr(8,2)}/${dayUpperLimit.substr(11,4)}-${monthConvert(dayUpperLimit.substr(4,3))}-${dayUpperLimit.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+    let timelineResponse=await fetch(timelineAPI)
+    let timelineData=await timelineResponse.json()
+    // let timelineData=dailySample
     getTimeline(timelineData,length,range)
   }
   else{
     if(range=="Last 5"){
         // Weather data from the current day of the year, along with the last 4 years is fetched, and then put into a list.
-        // let timelineAPI1=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse1=await fetch(timelineAPI1)
-        // let timelineData1=await timelineResponse1.json()
+        let timelineAPI1=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse1=await fetch(timelineAPI1)
+        let timelineData1=await timelineResponse1.json()
         
-        // let timelineAPI2=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse2=await fetch(timelineAPI2)
-        // let timelineData2=await timelineResponse2.json()
+        let timelineAPI2=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse2=await fetch(timelineAPI2)
+        let timelineData2=await timelineResponse2.json()
         
-        // let timelineAPI3=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse3=await fetch(timelineAPI3)
-        // let timelineData3=await timelineResponse3.json()
+        let timelineAPI3=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse3=await fetch(timelineAPI3)
+        let timelineData3=await timelineResponse3.json()
 
-        // let timelineAPI4=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse4=await fetch(timelineAPI4)
-        // let timelineData4=await timelineResponse4.json()
+        let timelineAPI4=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearBack1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearBack1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse4=await fetch(timelineAPI4)
+        let timelineData4=await timelineResponse4.json()
         
-        // let timelineAPI5=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse5=await fetch(timelineAPI5)
-        // let timelineData5=await timelineResponse5.json()
-        // let timelineData=[timelineData1,timelineData2,timelineData3,timelineData4,timelineData5]
-        let timelineData=annualBackSample
+        let timelineAPI5=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse5=await fetch(timelineAPI5)
+        let timelineData5=await timelineResponse5.json()
+        let timelineData=[timelineData1,timelineData2,timelineData3,timelineData4,timelineData5]
+        // let timelineData=annualBackSample
         getTimeline(timelineData,length,range)
     }
     else{
         // Weather data from the current day of the year, along with the next 4 years is fetched, and then put into a list.
-        // let timelineAPI1=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse1=await fetch(timelineAPI1)
-        // let timelineData1=await timelineResponse1.json()
+        let timelineAPI1=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${today.substr(11,4)}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse1=await fetch(timelineAPI1)
+        let timelineData1=await timelineResponse1.json()
         
-        // let timelineAPI2=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse2=await fetch(timelineAPI2)
-        // let timelineData2=await timelineResponse2.json()
+        let timelineAPI2=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward1}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse2=await fetch(timelineAPI2)
+        let timelineData2=await timelineResponse2.json()
         
-        // let timelineAPI3=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse3=await fetch(timelineAPI3)
-        // let timelineData3=await timelineResponse3.json()
+        let timelineAPI3=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward2}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse3=await fetch(timelineAPI3)
+        let timelineData3=await timelineResponse3.json()
 
-        // let timelineAPI4=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse4=await fetch(timelineAPI4)
-        // let timelineData4=await timelineResponse4.json()
+        let timelineAPI4=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward3}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse4=await fetch(timelineAPI4)
+        let timelineData4=await timelineResponse4.json()
         
-        // let timelineAPI5=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
-        // let timelineResponse5=await fetch(timelineAPI5)
-        // let timelineData5=await timelineResponse5.json()
-        // let timelineData=[timelineData1,timelineData2,timelineData3,timelineData4,timelineData5]
-        let timelineData=annualForwardSample
+        let timelineAPI5=`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${lon}/${yearForward4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}/${yearForward4}-${monthConvert(today.substr(4,3))}-${today.substr(8,2)}?unitGroup=metric&key=YDNN75VCHAT3KXK3HVC5RV6PV&contentType=json`
+        let timelineResponse5=await fetch(timelineAPI5)
+        let timelineData5=await timelineResponse5.json()
+        let timelineData=[timelineData1,timelineData2,timelineData3,timelineData4,timelineData5]
+        // let timelineData=annualForwardSample
         getTimeline(timelineData,length,range)
     }
   }   
