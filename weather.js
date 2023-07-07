@@ -360,10 +360,10 @@ const monthConvert=month=>{
     else if(month=="May"){
       return "05"
     }
-    else if(month=="June"){
+    else if(month=="Jun"){
       return "06"
     }
-    else if(month=="July"){
+    else if(month=="Jul"){
       return "07"
     }
     else if(month=="Aug"){
